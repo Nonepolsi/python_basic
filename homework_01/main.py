@@ -28,7 +28,7 @@ def is_prime(in_number):
     # Чтобы не вляпываться во float от извлечения корня из in_number,
     # возвожу test_number в квадрат и сравниваю так
     
-    if in_number == 1:
+    if in_number <= 1:
         return False
 
     test_number = 2
