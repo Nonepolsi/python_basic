@@ -5,7 +5,7 @@ import exceptions as exc
 class Vehicle(ABC):
     
     def __init__(
-            self, *,
+            self,
             weight: int = 1000,
             fuel: float = 30, 
             fuel_consumption: float = 5

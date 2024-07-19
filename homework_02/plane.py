@@ -2,28 +2,22 @@
 создайте класс `Plane`, наследник `Vehicle`
 """
 from base import Vehicle
-from typing import TypedDict, Unpack
 import exceptions as exc
-
-
-class VehicleArgs(TypedDict):
-
-    weight: int
-    fuel: float
-    fuel_consumption: float
 
 
 class Plane(Vehicle):
 
     def __init__(
-            self, *,
-            max_cargo: int = 200,
-            **kwargs: Unpack[VehicleArgs]
+            self,
+            weight: int,
+            fuel: float,
+            fuel_consumption: float,
+            max_cargo: int = 200
         ):
         
         self._cargo = 0
         self._max_cargo = max_cargo
-        super().__init__(**kwargs)
+        super().__init__(weight, fuel, fuel_consumption)
 
     def load_cargo(self, extra_cargo: int) -> None:
 
