@@ -1,8 +1,8 @@
 """
 создайте класс `Plane`, наследник `Vehicle`
 """
-from base import Vehicle
-import exceptions as exc
+from ..homework_02.base import Vehicle
+from ..homework_02.exceptions import CargoOverload
 
 
 class Plane(Vehicle):
@@ -21,12 +21,8 @@ class Plane(Vehicle):
 
     def load_cargo(self, extra_cargo: int) -> None:
 
-        try:
-            if (new_cargo := self.cargo + extra_cargo) > self.max_cargo:
-                raise exc.CargoOverload("New cargoload is too heavy")
-            
-        except exc.CargoOverload as err:
-            print(err)
+        if (new_cargo := self.cargo + extra_cargo) > self.max_cargo:
+            raise CargoOverload("New cargoload is too heavy")
         
         self.cargo = new_cargo
 

@@ -1,8 +1,8 @@
 """
 создайте класс `Car`, наследник `Vehicle`
 """
-from base import Vehicle
-from engine import Engine
+from ..homework_02.base import Vehicle
+from ..homework_02.engine import Engine
 
 class Car(Vehicle):
 
@@ -14,6 +14,3 @@ class Car(Vehicle):
     def set_engine(self, new_engine: Engine) -> None:
 
         self.engine = new_engine
-
-car1 = Car()
-print(isinstance(car1, Vehicle))
