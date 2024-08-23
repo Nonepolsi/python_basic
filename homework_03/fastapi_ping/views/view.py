@@ -8,7 +8,7 @@ router = APIRouter()
 
 
 @router.get(
-    "/ping",
+    "/ping/",
     summary="Returns pong",
     description="Returns pong to user as a response to ping"
 )

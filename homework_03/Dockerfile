@@ -1,4 +1,4 @@
-#docker run -p 8000:8000 -it ping_app
+#docker run -p 12345:8000 -it ping_app
 
 FROM python:3.9-buster
 
