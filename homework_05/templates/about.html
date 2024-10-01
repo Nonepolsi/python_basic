@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{%block content %}
+    <div class="container">
+        <div class="row">
+            {% for about_section in about_sections %}
+                <div class="col-md-4">
+                    <h1 class="text-primary text-center">{{ about_section['title'] }}</h1>
+                    <p class="text-success">{{ about_section['contents'] }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
