@@ -1,0 +1,25 @@
+{% extends 'posts/base.html' %}
+
+{% block title %}
+  Post #{{ post.id }}
+{% endblock %}
+
+{% block body %}
+  <h1>Post #{{ post.id }} details</h1>
+  <div>
+    <strong>Title:</strong> {{ post.title }}
+  </div>
+  <div>
+    <strong>Body:</strong> {{ post.body }}
+  </div>
+  <div>
+    <strong>Author:</strong> 
+    <a
+      class="list-group-item link-primary link-underline"
+      href="{{ url_for('users_app.details', user_id=post.user_id) }}"
+      >{{ user.name }}</a>
+  </div>
+  <div class="mt-5">
+    <a class="btn btn-secondary" href="{{ url_for('posts_app.list') }}">Back to the list of posts</a>
+  </div>
+{% endblock %}

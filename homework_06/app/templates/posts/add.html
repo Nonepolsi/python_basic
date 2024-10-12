@@ -1,0 +1,42 @@
+{% extends 'posts/base.html' %}
+
+{% from 'macros/errors-list.html' import show_errors %}
+
+{% block title %}
+  Add a new post
+{% endblock %}
+
+{% block body %}
+  <h1>Add a new post</h1>
+  <form method="post">
+    {{ form.csrf_token }}
+    <div class="my-2">
+      {{ form.title.label(class="form-label") }}
+      {{ form.title(size=20, class="form-control") }}
+      {% if form.title.errors %}
+        {{ show_errors(form.title.errors) }}
+      {% endif %}
+    </div>
+    <div class="my-2">
+      {{ form.body.label(class="form-label") }}
+      {{ form.body(size=20, class="form-control") }}
+      {% if form.body.errors %}
+        {{ show_errors(form.body.errors) }}
+      {% endif %}
+    </div>
+    <div class="my-2">
+      {{ form.user_id.label(class="form-label") }}
+      {{ form.user_id(size=20, class="form-control") }}
+      {% if form.user_id.errors %}
+        {{ show_errors(form.user_id.errors) }}
+      {% endif %}
+    </div>
+    <div>
+      {{ form.add(class="my-2 btn btn-primary") }}
+    </div>
+  </form>
+
+  <div class="mt-5">
+    <a class="btn btn-secondary" href="{{ url_for('posts_app.list') }}">Back to the list of posts</a>
+  </div>
+{% endblock %}

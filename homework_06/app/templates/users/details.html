@@ -1,0 +1,21 @@
+{% extends 'users/base.html' %}
+
+{% block title %}
+  User #{{ user.id }}
+{% endblock %}
+
+{% block body %}
+  <h1>User #{{ user.id }} details</h1>
+  <div>
+    <strong>Name:</strong> {{ user.name }}
+  </div>
+  <div>
+    <strong>Username:</strong> {{ user.username }}
+  </div>
+  <div>
+    <strong>E-mail:</strong> {{ user.email }}
+  </div>
+  <div class="mt-5">
+    <a class="btn btn-secondary" href="{{ url_for('users_app.list') }}">Back to the list of users</a>
+  </div>
+{% endblock %}

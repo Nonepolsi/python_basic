@@ -1,0 +1,42 @@
+{% extends 'users/base.html' %}
+
+{% from 'macros/errors-list.html' import show_errors %}
+
+{% block title %}
+  Add a new user
+{% endblock %}
+
+{% block body %}
+  <h1>Add a new user</h1>
+  <form method="post">
+    {{ form.csrf_token }}
+    <div class="my-2">
+      {{ form.name.label(class="form-label") }}
+      {{ form.name(size=20, class="form-control") }}
+      {% if form.name.errors %}
+        {{ show_errors(form.name.errors) }}
+      {% endif %}
+    </div>
+    <div class="my-2">
+      {{ form.username.label(class="form-label") }}
+      {{ form.username(size=20, class="form-control") }}
+      {% if form.username.errors %}
+        {{ show_errors(form.username.errors) }}
+      {% endif %}
+    </div>
+    <div class="my-2">
+      {{ form.email.label(class="form-label") }}
+      {{ form.email(size=20, class="form-control") }}
+      {% if form.email.errors %}
+        {{ show_errors(form.email.errors) }}
+      {% endif %}
+    </div>
+    <div>
+      {{ form.add(class="my-2 btn btn-primary") }}
+    </div>
+  </form>
+
+  <div class="mt-5">
+    <a class="btn btn-secondary" href="{{ url_for('users_app.list') }}">Back to the list of users</a>
+  </div>
+{% endblock %}
