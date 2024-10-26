@@ -1,0 +1,10 @@
+{% extends 'quizapp/base.html' %}
+
+{% block title %}
+    {{ quiz.title }}
+{% endblock %}
+
+{% block body %}
+    <h1>{{ quiz.title }}</h1>
+    <a href="{% url 'quiz_list' %}">Вернуться к списку тестов</a>
+{% endblock %}

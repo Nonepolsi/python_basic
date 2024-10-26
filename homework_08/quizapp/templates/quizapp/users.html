@@ -1,0 +1,13 @@
+{% extends 'quizapp/base.html' %}
+
+{% block title %}
+    Пользователи ресурса
+{% endblock %}
+
+{% block body %}
+    {% for user in users %}
+        <li>
+            <a href="{% url 'user' user.id %}">{{ user.name }}</a>
+        </li>
+    {% endfor %}
+{% endblock %}
