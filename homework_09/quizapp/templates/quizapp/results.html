@@ -1,0 +1,13 @@
+{% extends 'quizapp/base.html' %}
+
+{% block title %}
+    Список результатов
+{% endblock %}
+
+{% block body %}
+    {% for result in results %}
+        <li>
+            <a href="{% url 'result' result.id %}">{{ result.user }} - {{ result.quiz }} - {{ result.date_time }}</a>
+        </li>
+    {% endfor %}
+{% endblock %}

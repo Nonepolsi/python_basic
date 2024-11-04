@@ -1,0 +1,17 @@
+{% extends 'quizapp/base.html' %}
+
+{% block title %}
+    Тестирование {{ result.date_time }}
+{% endblock %}
+
+{% block body %}
+    <ul>
+        <div>{{ result.user }}</div>
+        <div>{{ result.quiz }}</div>
+        <div>{{ result.num_correct }}</div>
+        <div>{{ result.num_wrong }}</div>
+        <div>{{ result.total }}</div>
+        <div>{{ result.date_time }}</div>
+    </ul>
+    <a href="{% url 'results' %}">Вернуться к списку результатов</a>
+{% endblock %}
