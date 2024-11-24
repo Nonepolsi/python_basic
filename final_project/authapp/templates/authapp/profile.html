@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Профиль пользователя
+{% endblock %}
+ 
+{% block body %}
+  <div class="container mt-5">
+    <div class="col-6 mx-auto">
+      <h3>Профиль</h3>
+      <hr>
+      {{ form.as_p }}
+      <p>
+        <a href="{% url 'authapp:password_change_page' %}">
+          <button class="btn btn-primary" type="submit">Сменить пароль</button>
+        </a>
+      </p>
+      <hr>
+    </div>
+    <form class="col-6 mx-auto" method="post">
+      {% csrf_token %}
+      <button class="btn btn-primary" type="submit">Сохранить</button>
+    </form>
+  </div>
+{% endblock %}

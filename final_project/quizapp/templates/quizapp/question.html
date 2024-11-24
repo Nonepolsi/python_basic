@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Проверка знаний - тест {{ question.quiz }}
+{% endblock %}
+
+{% block body %}
+    <h1>{{ question.text }}</h1>
+    <h4>{{ question.result }}</h4>
+    <a href="{% url 'index' %}">Закончить тест без сохранения</a>
+{% endblock %}
